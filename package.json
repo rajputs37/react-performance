@@ -1,0 +1,32 @@
+{
+  "name": "use-performance",
+  "version": "1.0.0",
+  "description": "React hooks for performance",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "rollup": "rollup -c ",
+    "start": "rollup -c -w"
+  },
+  "author": "Dharmesh Rajput -- rajputs37",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/react": "^18.0.28",
+    "rollup": "^3.19.1",
+    "rollup-plugin-dts": "^5.3.0",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "tslib": "^2.5.0"
+  }
+}
