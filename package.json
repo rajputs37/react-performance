@@ -1,16 +1,20 @@
 {
   "name": "use-performance",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "React hooks for performance",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "rollup": "rollup -c ",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "build": "tsc -p tsconfig.build.json"
   },
   "author": "Dharmesh Rajput -- rajputs37",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
