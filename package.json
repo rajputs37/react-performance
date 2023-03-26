@@ -1,6 +1,6 @@
 {
   "name": "use-performance",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React hooks for performance",
   "main": "dist/index.js",
   "scripts": {
@@ -30,6 +30,10 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajputs37/react-performance.git"
+  },
   "dependencies": {
     "tslib": "^2.5.0"
   }
