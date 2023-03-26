@@ -44,7 +44,7 @@ const App = () => {
     return someExpensiveFunction()
   }, dependencyArray, dataDefaultValue)
   
-  // The component App will not get wait for data to get loaded, instead it will use just its defaultValue or the first time
+  // The component App will not wait for data to get loaded, instead it will use just its defaultValue for the first time
   // and as soon as the expensive function is completed, the component is re-rendered with new data
  
   return <>
