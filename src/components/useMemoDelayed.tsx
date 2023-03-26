@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const useMemoDelayed = (fn:Function,dependencies:any[] = [],defaultValue:any =null) => {
-    const [computedValue,setComputedValue] = useState(defaultValue)
+function useMemoDelayed<T>(fn: () => T, deps?: any[], defaultValue?: any): T {
+  const [computedValue, setComputedValue] = useState<T>(defaultValue);
+  useEffect(() => {
+    setComputedValue(fn());
+  }, deps);
 
-    useEffect(()=>{
-        setComputedValue(fn())
-    },dependencies)
-
-    return computedValue;
+  return computedValue;
 }
-export default useMemoDelayed
+
+export default useMemoDelayed;
