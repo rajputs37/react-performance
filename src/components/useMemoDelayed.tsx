@@ -9,6 +9,7 @@ function useMemoDelayed<T>(
 
   const runAsyncTask = async () => {
     const data = await Promise.resolve(fn());
+
     setComputedValue(data);
   };
 
