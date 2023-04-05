@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 
 function useExpensiveCompute<T, R>(
-  fn: () => R | Promise<R>,
+  fn: (value?: T) => R | Promise<R>,
   deps: any[] = [],
   value?: T
 ): { data: R | undefined; error: any } {
@@ -34,7 +34,7 @@ function useExpensiveCompute<T, R>(
 export default useExpensiveCompute;
 
 function expensiveCompute<T, R>(
-  fn: () => R | Promise<R>,
+  fn: (value?: T) => R | Promise<R>,
   value?: T
 ): Promise<R> | R {
   return new Promise((resolve, reject) => {
