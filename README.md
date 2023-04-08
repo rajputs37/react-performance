@@ -54,3 +54,38 @@ const App = () => {
   </>
 }
 ```
+
+
+## expensiveCompute
+
+When an expensive function is executed on the main thread, the performance of the React app decreases. We must execute the expensive function in a worker thread. Please follow the use of `expensiveCompute` function
+
+```
+import { expensiveCompute } from 'use-performance';
+
+const data = await expensiveCompute(() => {
+  const arrayToCompute = [];
+  for(let i = 0; i < 10000; i++){
+    arrayToCompute.push(i)
+  }
+  
+  return arrayToCompute;
+})
+```
+Please note that you cannot directly use any variable inside of the `expensiveCompute` function, which was declared outside the scope of the function.
+Pass variables in the `expensiveCompute` function as shown below
+```
+const headings = ['one', 'two', 'three'];
+
+const data = await expensiveCompute((input) => {
+  const { headings } = input;
+  const arrayToCompute = [];
+  for(let i = 0; i < 10000; i++){
+    arrayToCompute.push([...headings, i])
+  }
+  
+  return arrayToCompute;
+}, { headings })
+```
+#Please note that this utility only works in a browser
+
