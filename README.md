@@ -87,5 +87,5 @@ const data = await expensiveCompute((input) => {
   return arrayToCompute;
 }, { headings })
 ```
-
+#Please note that this utility only works in a browser
 
